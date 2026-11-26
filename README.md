@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="./docs/demo.gif" alt="Quick Replies interactive walkthrough: hover preview, Cmd+Click inline editing, Shift+Click multi-select batching, background-chat forking, and one-tap sending" width="820" />
+  <img src="./docs/demo.gif" alt="Quick Replies interactive walkthrough: 1) one-click reply, 2) Shift+Click multi-select batching, 3) background-chat forking, and 4) Cmd+Click inline editing" width="820" />
 </p>
 
 Built as an **Antigravity Plugin** combining an **MCP App** (`@modelcontextprotocol/ext-apps`) and an always-on agent rule (`rules/AGENTS.md`). Both the MCP server (`dist/server.mjs`) and the UI (`dist/inline.html`) are pre-bundled into self-contained files—**no `npm install` required** to use.

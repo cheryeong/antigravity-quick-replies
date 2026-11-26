@@ -1,0 +1,17 @@
+{
+  "name": "antigravity-quick-replies",
+  "version": "1.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/ext-apps": "^1.0.0",
+    "esbuild": "^0.25.0"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "quick-replies",
+  "displayName": "Quick Replies",
+  "description": "Contextual one-tap reply and action pills inline in chat with multi-select batching, ⌘-click inline editing, background-chat forking, and zero-wait file/URL actions.",
+  "logo": "assets/logo.png",
+  "version": "1.2.0",
+  "author": {
+    "name": "CY Lee",
+    "url": "https://github.com/cheryeong"
+  },
+  "homepage": "https://github.com/cheryeong/antigravity-quick-replies",
+  "repository": "https://github.com/cheryeong/antigravity-quick-replies",
+  "suggestedPrompts": [
+    "Show contextual quick-reply pills for the next steps",
+    "Propose two approaches and give me clickable reply pills to pick one",
+    "Summarize my changes with file-open pills and clickable next-step replies"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "quick-replies": {
+      "command": "bash",
+      "args": [
+        "${PLUGIN_ROOT}/bin/run-server.sh"
+      ]
+    }
+  }
+}

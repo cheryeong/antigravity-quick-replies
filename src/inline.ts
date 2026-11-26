@@ -61,6 +61,25 @@ function getKind(item: PillOption): PillKind {
   return 'reply';
 }
 
+function createReplyLeadingIcon(label: string): HTMLElement | null {
+  if (/\b(commit|push|ship)\b/i.test(label)) {
+    const el = document.createElement('span');
+    el.className = 'pill-icon';
+    el.setAttribute('aria-hidden', 'true');
+    el.textContent = '🚀';
+    return el;
+  }
+  if (/\barchive\b/i.test(label)) {
+    const el = document.createElement('span');
+    el.className = 'pill-icon pill-icon-svg';
+    el.setAttribute('aria-hidden', 'true');
+    el.innerHTML =
+      '<svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="2.5" width="13" height="3" rx="0.8"/><path d="M2.5 5.5V12.5C2.5 13.05 2.95 13.5 3.5 13.5H12.5C13.05 13.5 13.5 13.05 13.5 12.5V5.5"/><path d="M6.5 8.5H9.5"/></svg>';
+    return el;
+  }
+  return null;
+}
+
 function getPrompt(item: PillOption): string {
   return (item.prompt ?? item.label).trim();
 }
@@ -433,6 +452,9 @@ function render() {
       check.className = `pill-check${isSelected ? ' checked' : ''}`;
       check.textContent = isSelected ? '✓' : '';
       mainBtn.appendChild(check);
+    } else if (!isSent && !isSending && !isAttached) {
+      const leadIcon = createReplyLeadingIcon(item.label);
+      if (leadIcon) mainBtn.appendChild(leadIcon);
     }
 
     const labelSpan = document.createElement('span');
@@ -448,11 +470,11 @@ function render() {
     }
     mainBtn.appendChild(labelSpan);
 
-    if (!multiSelectMode && !isSent && !isSending) {
-      const arrow = document.createElement('span');
-      arrow.className = 'pill-arrow';
-      arrow.textContent = isEditing ? '✎' : '↗';
-      mainBtn.appendChild(arrow);
+    if (isEditing && !multiSelectMode && !isSent && !isSending) {
+      const editMark = document.createElement('span');
+      editMark.className = 'pill-arrow';
+      editMark.textContent = '✎';
+      mainBtn.appendChild(editMark);
     }
 
     mainBtn.addEventListener('mouseenter', () => {

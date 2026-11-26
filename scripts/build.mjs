@@ -240,7 +240,8 @@ const INLINE_CSS = `
     color: var(--color-text-success, #15803d);
   }
   .pill:disabled { cursor: default; opacity: 0.7; }
-  .pill-icon { font-size: 11.5px; }
+  .pill-icon { font-size: 11.5px; line-height: 1; }
+  .pill-icon-svg { display: inline-flex; align-items: center; opacity: 0.85; }
   .pill-arrow { font-size: 11px; opacity: 0.6; }
 
   /* Multi-select batch bar */

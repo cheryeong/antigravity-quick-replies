@@ -1,8 +1,45 @@
-# Quick Replies for Antigravity
+<p align="center">
+  <img src="./assets/logo.png" alt="Quick Replies logo" width="84" height="84" />
+</p>
 
-Contextual one-tap reply and action pills rendered inline right above your chat input box in Google Antigravity.
+<h1 align="center">Quick Replies for Antigravity</h1>
+
+<p align="center">
+  Contextual one-tap reply and action pills rendered inline right above your chat input box in Google Antigravity.
+</p>
+
+<p align="center">
+  <img src="./docs/demo.gif" alt="Quick Replies interactive walkthrough: hover preview, Cmd+Click inline editing, Shift+Click multi-select batching, background-chat forking, and one-tap sending" width="820" />
+</p>
 
 Built as an **Antigravity Plugin** combining an **MCP App** (`@modelcontextprotocol/ext-apps`) and an always-on agent rule (`rules/AGENTS.md`). Both the MCP server (`dist/server.mjs`) and the UI (`dist/inline.html`) are pre-bundled into self-contained files—**no `npm install` required** to use.
+
+---
+
+## Screenshots
+
+### Contextual Inline Pills & Zero-Wait Actions (Light Mode)
+Hover any pill to preview the full prompt before sending. Dashed pills open workspace files directly in the side pane (`📄`) or open external URLs (`🔗`) with zero LLM round-trip.
+
+<p align="center">
+  <img src="./docs/screenshot-inline-light.png" alt="Contextual inline quick-reply pills with hover preview, background fork buttons, and file/URL action pills in Light Mode" width="820" />
+</p>
+
+### Inline Editing on `⌘+Click` (Dark Mode)
+Hold **`⌘+Click`** (or `Ctrl+Click` / `Option+Click`) on any pill to tweak the prompt before sending, attach it to the composer context (`Attach to input`), or launch it in a background chat (`Run in bg ⑂`).
+
+<p align="center">
+  <img src="./docs/screenshot-edit-dark.png" alt="Cmd+Click inline prompt editor in Dark Mode with Attach to input, Run in bg, and Send controls" width="820" />
+</p>
+
+### Multi-Select Batching (`Shift+Click`)
+Hold **`Shift+Click`** (or toggle **Multi-select**) to pick multiple pills and combine them into a single prompt—then tap **Send N together ↗**, **Edit combined**, or **Run in bg ⑂**.
+
+<p align="center">
+  <img src="./docs/screenshot-multiselect-light.png" alt="Multi-select batching bar combining two pills into a single turn" width="820" />
+</p>
+
+---
 
 ## Features
 
@@ -68,6 +105,7 @@ quick-replies/
 ├── plugin.json          # Plugin manifest
 ├── mcp_config.json      # Local stdio MCP server config
 ├── assets/logo.png      # 256×256 transparent plugin icon
+├── docs/                # README screenshots & animated demo GIF
 ├── bin/run-server.sh    # Portable launcher for dist/server.mjs
 ├── dist/
 │   ├── inline.html      # Self-contained MCP App HTML bundle

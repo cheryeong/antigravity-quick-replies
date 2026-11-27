@@ -3,7 +3,7 @@
   "displayName": "Quick Replies",
   "description": "Contextual one-tap reply and action pills inline in chat with multi-select batching, ⌘-click inline editing, background-chat forking, and zero-wait file/URL actions.",
   "logo": "assets/logo.png",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "author": {
     "name": "CY Lee",
     "url": "https://github.com/cheryeong"

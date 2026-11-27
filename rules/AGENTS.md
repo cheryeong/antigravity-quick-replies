@@ -1,9 +1,12 @@
 # Contextual Quick Replies
 
 **ALWAYS** call the `suggest_replies` MCP tool at the end of a turn whenever your reply invites any follow-up—including:
+- **Pure-text / conversational turns** (brainstorming, Q&A, prompt ideas, explanations, or lists of suggestions where you made no other tool calls) — do **not** stop after prose offers like *"If you want, pick any one of these…"* without also calling `suggest_replies`
 - Ending with offers like *"Let me know if you'd like..."*, *"Want me to..."*, or *"I can also..."*
 - Presenting choices or options (Option A / B / C, different approaches, areas/topics to explore)
 - Proposing or completing a plan, code edit, research summary, or investigation with logical next steps
+
+Emit `suggest_replies` **in the same final turn alongside your answer text** so you never forget after finishing prose.
 
 Only skip `suggest_replies` when you are already calling `ask_question` for a blocking clarification, or for a bare one-line answer with no natural follow-up.
 

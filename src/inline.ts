@@ -29,7 +29,7 @@ const ToggleAuxPaneResultSchema = z
   })
   .passthrough();
 
-const app = new App({ name: 'Quick Replies Inline', version: '1.2.0' }, {});
+const app = new App({ name: 'Quick Replies Inline', version: '1.3.0' }, {});
 
 let currentPayload: InlinePayload = { heading: '', replies: [] };
 let canSend = true;

@@ -1,0 +1,11 @@
+{
+  "quick-replies-stop-guard": {
+    "Stop": [
+      {
+        "type": "command",
+        "command": "./hooks/stop-check.sh",
+        "timeout": 5
+      }
+    ]
+  }
+}

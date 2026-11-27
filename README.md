@@ -12,7 +12,7 @@
   <img src="./docs/demo.gif" alt="Quick Replies interactive walkthrough: 1) one-click reply, 2) Shift+Click multi-select batching, 3) background-chat forking, and 4) Cmd+Click inline editing" width="820" />
 </p>
 
-Built as an **Antigravity Plugin** combining an **MCP App** (`@modelcontextprotocol/ext-apps`) and an always-on agent rule (`rules/AGENTS.md`). Both the MCP server (`dist/server.mjs`) and the UI (`dist/inline.html`) are pre-bundled into self-contained files—**no `npm install` required** to use.
+Built as an **Antigravity Plugin** combining an **MCP App** (`@modelcontextprotocol/ext-apps`), an always-on agent rule (`rules/AGENTS.md`), and a **`Stop` lifecycle hook guard** (`hooks.json`). Both the MCP server (`dist/server.mjs`) and the UI (`dist/inline.html`) are pre-bundled into self-contained files—**no `npm install` required** to use.
 
 ---
 
@@ -50,6 +50,7 @@ Hold **`Shift+Click`** (or toggle **Multi-select**) to pick multiple pills and c
 - **Zero-wait File & URL action pills**:
   - `kind: "file"` opens a referenced workspace file directly in the side pane (`com.google.antigravity/toggle-aux-pane`).
   - `kind: "url"` opens a cited `http://` or `https://` link externally (`app.openLink()`).
+- **Reliable `Stop` hook guard**: A lightweight lifecycle hook (`hooks.json` → `hooks/stop-check.mjs`) inspects the current turn's transcript on normal turn completion and nudges the agent once if `suggest_replies` was skipped on a substantive reply (e.g. pure-text brainstorming turns). Automatically skips subagents, `ask_question` turns, bare one-line answers, errors/cancellations, and background waits, and guards on `continuationActive` so it never loops.
 
 ## Requirements
 
@@ -104,6 +105,10 @@ agy plugin validate --strict .
 quick-replies/
 ├── plugin.json          # Plugin manifest
 ├── mcp_config.json      # Local stdio MCP server config
+├── hooks.json           # Stop lifecycle hook config
+├── hooks/
+│   ├── stop-check.sh    # Portable launcher for stop-check.mjs
+│   └── stop-check.mjs   # Guards against skipped suggest_replies calls
 ├── assets/logo.png      # 256×256 transparent plugin icon
 ├── docs/                # README screenshots & animated demo GIF
 ├── bin/run-server.sh    # Portable launcher for dist/server.mjs

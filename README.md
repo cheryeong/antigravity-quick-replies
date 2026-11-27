@@ -54,14 +54,29 @@ Hold **`Shift+Click`** (or toggle **Multi-select**) to pick multiple pills and c
 
 ## Requirements
 
+- [Google Antigravity](https://antigravity.google/download) (App, IDE, or CLI)
 - **Node.js 20+** (only `node` is needed at runtime; dependencies are pre-bundled in `dist/`).
 
 ## Installation
 
 ### Via Antigravity CLI (`agy`)
 
+Install directly from GitHub right now:
+
 ```bash
 agy plugin install https://github.com/cheryeong/antigravity-quick-replies
+```
+
+### Open in Antigravity (Marketplace)
+
+Once published in the Antigravity Marketplace, open the plugin directly in the Antigravity App via deep link:
+
+- <a href="antigravity://customizations/marketplaces/antigravity-plugins-partners/plugins/quick-replies">Open in Antigravity</a> (`antigravity://plugin/quick-replies?marketplace=antigravity-plugins-partners`)
+
+Or install from the Marketplace catalog via CLI:
+
+```bash
+agy plugin install quick-replies@antigravity-plugins-partners
 ```
 
 ### Manual Local Install

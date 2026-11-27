@@ -3,7 +3,7 @@
     "Stop": [
       {
         "type": "command",
-        "command": "./hooks/stop-check.sh",
+        "command": "bash ./hooks/stop-check.sh",
         "timeout": 5
       }
     ]

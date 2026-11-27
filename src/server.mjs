@@ -113,7 +113,7 @@ function readInlineHtml() {
 const server = new Server(
   {
     name: 'quick-replies',
-    version: '1.3.1',
+    version: '1.3.2',
   },
   {
     capabilities: {
